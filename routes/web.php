@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//Carta el controlador creador 
+use App\Http\Controllers\PrimerControlador;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,9 @@ Route::get('/test', function () {
 Route::get('/testing', function () {
     return "Retorna tal cual";
 });
+//Llama el Controlador creador y la primera funcion
+Route::get('/pepe', [PrimerControlador::class,'arrel']);
+
+
+Route::get('/ejercicio1', [ControladorEjercicio1 ::class,'ej1Parametro']);
 
