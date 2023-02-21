@@ -15,15 +15,21 @@ Route::get('/ejercicio1', [ControladorEjercicio1 ::class,'ej1Parametro']);
 Route::get('/hola/{texto?}', [ControladorEjercicio1 ::class,
 'ej1ParametroConVariable']);
 
+//Ruta con path/{variable} y parametros, llama la funcion del controlador
+Route::get('/multi/{user?}/{phone?}/{street?}/{cp?}', [ControladorEjercicio1 ::class,
+'ej1ParametroMultiVariable']);
+
+
 //Ruta por defecto
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Devuelve la view prova.blade.php en la ruta /test
 Route::get('/test', function () {
     return view('prova');
 });
+//Devuelve 'retorna tal cual' en la ruta /testing
 
 Route::get('/testing', function () {
     return "Retorna tal cual";
